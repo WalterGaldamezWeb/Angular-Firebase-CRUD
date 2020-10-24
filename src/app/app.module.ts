@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { ProductoComponent } from './componentes/producto/producto.component';
 import { ProductosComponent } from './componentes/productos/productos.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductosService } from './servicios/productos.service';
 
 
 @NgModule({
@@ -22,7 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ProductosService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

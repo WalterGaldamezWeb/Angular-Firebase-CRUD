@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ProductoModel } from '../modelos/producto.model';
-import { map } from 'rxjs/operators';
+import { map, delay } from 'rxjs/operators';
 
 
 
@@ -13,6 +13,27 @@ export class ProductosService {
   private url = "https://angular-crud-65bbf.firebaseio.com"
 
   constructor(private http:HttpClient) { }
+
+  obtenerTodosProductos () {
+    return this.http.get(`${ this.url }/productos.json`)
+      .pipe(
+        map( res => this.convertirObjeto(res)),delay(1000)
+      )
+  }
+
+  convertirObjeto (productoObjeto:object) {
+
+    const productos:ProductoModel [] = [];
+
+    Object.keys(productoObjeto).forEach( key => {
+
+      const producto:ProductoModel = productoObjeto[key];
+      producto.id = key;
+      productos.push(producto);
+
+    });
+    return productos;
+  }
 
   crearProducto(producto:ProductoModel){
     return this.http.post(`${ this.url }/productos.json`, producto)
