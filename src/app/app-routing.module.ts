@@ -6,18 +6,18 @@ import { ProductoComponent } from './componentes/producto/producto.component';
 
 const routes: Routes = [
   {
-    path: '**',
-    pathMatch: 'full',
-    redirectTo: '/productos'
-  },
-  {
-    path: '/productos',
+    path: 'productos',
     component: ProductosComponent
   },
   {
-    path: '/producto/:id',
+    path: 'producto/:id',
     component: ProductoComponent
-  }
+  },
+  {
+    path: '**',
+    redirectTo: 'productos',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({
