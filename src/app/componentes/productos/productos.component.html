@@ -4,7 +4,7 @@
   <div class="col text-right">
     <button [routerLink]="['/producto/nuevo']" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar</button></div>
 </div>
-<table class="table mt-3">
+<table *ngIf="!cargando && productos.length > 0" class="table mt-3 animated fadeIn slow">
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
@@ -30,7 +30,7 @@
     </tr>
   </tbody>
 </table>
-<div *ngIf="cargando" class="alert alert-info text-center mt-3">
+<div *ngIf="cargando" class="alert alert-info text-center mt-3 animated fadeIn faster">
   <h4 class="alert-heading">Cargando...</h4>
   <p class="text-center">
     <i class="fas fa-spin fa-circle-notch fa-3x"></i>
@@ -39,7 +39,7 @@
     Espere por favor
   </p>
 </div>
-<div *ngIf="noExiste" class="alert alert-danger text-center mt-3">
+<div *ngIf="!cargando && productos.length === 0" class="alert alert-danger text-center mt-3 animated fadeIn faster">
   <h4 class="alert-heading">No hay Registros</h4>
   <p class="text-center">
     <i class="fas fa-exclamation fa-3x"></i>
