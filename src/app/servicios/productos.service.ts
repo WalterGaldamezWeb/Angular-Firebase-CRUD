@@ -10,7 +10,7 @@ import { map, delay } from 'rxjs/operators';
 })
 export class ProductosService {
 
-  private url = "https://angular-crud-65bbf.firebaseio.com"
+  private url = "Url de proyecto en firebase como indica en el README.md"
 
   constructor(private http:HttpClient) { }
 

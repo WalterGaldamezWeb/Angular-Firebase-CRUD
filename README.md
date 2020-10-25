@@ -1,27 +1,29 @@
-# AngularFirebaseCRUD
+## Angular + Firebase como API Rest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
+#### Tecnologias
+1. Angular
+2. TypeScript
+3. Firebase
+4. Bootstrap
+5. fontawesome-free
+6. animate.css
+7. SweetAlert2
 
-## Development server
+## 🎨 Vista Previa
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![](https://github.com/WalterGaldamezWeb/Angular-Firebase-CRUD/blob/master/capturas_pantalla/01.png)
 
-## Code scaffolding
+![](https://github.com/WalterGaldamezWeb/Angular-Firebase-CRUD/blob/master/capturas_pantalla/02.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![](https://github.com/WalterGaldamezWeb/Angular-Firebase-CRUD/blob/master/capturas_pantalla/03.png)
 
-## Build
+![](https://github.com/WalterGaldamezWeb/Angular-Firebase-CRUD/blob/master/capturas_pantalla/04.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+![](https://github.com/WalterGaldamezWeb/Angular-Firebase-CRUD/blob/master/capturas_pantalla/05.png)
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#### Pasos
+1. Clonar Repositorio
+2. crear un proyecto en firebase
+3. copiar y pegar la url del proyecto de firebase en productos.service.ts linea 13
+3. ejemplo https://tu-proyecto-firebase01abc.firebaseio.com
+4. ejecutar el proyecto angular ng serve -o
