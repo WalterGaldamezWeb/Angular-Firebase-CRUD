@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoModel } from 'src/app/modelos/producto.model';
 import { ProductosService } from '../../servicios/productos.service';
+import { Router } from '@angular/router';
+
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-productos',
@@ -13,7 +16,8 @@ export class ProductosComponent implements OnInit {
   cargando:boolean = false;
   noExiste:boolean;
 
-  constructor(private servicio:ProductosService) { }
+  constructor(private servicio:ProductosService,
+              private router:Router) { }
 
   ngOnInit(): void {
     this.listarProductos();
@@ -30,6 +34,24 @@ export class ProductosComponent implements OnInit {
         this.cargando = false;
       }
     );
+  }
+
+  eliminar (producto:ProductoModel, i:number){
+
+
+
+    Swal.fire({
+      title: 'Estas Seguro',
+      text: `Quieres eliminar el producto ${ producto.nombre }`,
+      icon: 'warning',
+      showConfirmButton: true,
+      showCancelButton: true
+    }).then( res => {
+      if (res.value == true){
+        this.productos.splice(i,1);
+        this.servicio.eliminarProducto(producto).subscribe();
+      }
+    });
   }
 
 }

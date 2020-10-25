@@ -17,7 +17,7 @@ export class ProductosService {
   obtenerTodosProductos () {
     return this.http.get(`${ this.url }/productos.json`)
       .pipe(
-        map( res => this.convertirObjeto(res)),delay(1000)
+        map( res => this.convertirObjeto(res)),delay(500)
       )
   }
 
@@ -33,6 +33,10 @@ export class ProductosService {
 
     });
     return productos;
+  }
+
+  obtenerProductoId (id:string) {
+    return this.http.get(`${ this.url }/productos/${id}.json`);
   }
 
   crearProducto(producto:ProductoModel){
@@ -54,6 +58,10 @@ export class ProductosService {
     delete productoTemporal.id;
 
     return this.http.put(`${ this.url }/productos/${ producto.id}.json`, productoTemporal);
+  }
+
+  eliminarProducto (producto:ProductoModel) {
+    return this.http.delete(`${ this.url }/productos/${producto.id}.json`);
   }
 
 }
