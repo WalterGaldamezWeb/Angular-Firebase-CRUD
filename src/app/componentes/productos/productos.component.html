@@ -18,7 +18,7 @@
     <tr *ngFor="let producto of productos; let i = index">
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ producto.nombre }}</td>
-      <td>{{ producto.precio }}</td>
+      <td>$ {{ producto.precio }}</td>
       <td>
         <span *ngIf="producto.disponible" class="badge badge-pill badge-success">Disponible</span>
         <span *ngIf="!producto.disponible" class="badge badge-pill badge-danger">Agotado</span>

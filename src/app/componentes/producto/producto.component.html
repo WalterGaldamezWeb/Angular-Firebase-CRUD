@@ -1,4 +1,4 @@
-<h1><strong>Producto</strong> Nombre Producto</h1>
+<h1><strong>Producto</strong> {{ producto.nombre }}</h1>
 <hr>
 <div class="row">
   <div class="col text-right">
@@ -17,7 +17,7 @@
     <input [(ngModel)]="producto.nombre" type="text" name="nombre" class="form-control" placeholder="Nombre Producto" required>
   </div>
   <div class="form-group">
-    <label>Precio</label>
+    <label>Precio $</label>
     <input [(ngModel)]="producto.precio" type="text" name="precio" class="form-control" placeholder="Precio">
   </div>
   <div class="form-group">
